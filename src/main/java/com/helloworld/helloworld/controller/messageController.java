@@ -4,28 +4,15 @@ import com.helloworld.helloworld.exceptions.NotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 @RestController
 @RequestMapping("message")
 public class messageController {
-    private int counter = 4;
-    private List<Map<String, String>> messages = new ArrayList<>() {{
-        add(new HashMap<String, String>() {{
-            put("id", "1");
-            put("text", "First message");
-        }});
-        add(new HashMap<String, String>() {{
-            put("id", "2");
-            put("text", "Second message");
-        }});
-        add(new HashMap<String, String>() {{
-            put("id", "3");
-            put("text", "Third message");
-        }});
-    }};
+    private int counter = 1;
+    private List<Map<String, String>> messages = new ArrayList<>() {
+    };
 
     @GetMapping
     public List<Map<String, String>> list() {
