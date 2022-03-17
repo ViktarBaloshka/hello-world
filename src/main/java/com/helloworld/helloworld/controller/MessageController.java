@@ -2,6 +2,7 @@ package com.helloworld.helloworld.controller;
 
 import com.helloworld.helloworld.service.MessageService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class MessageController {
     }
 
     @DeleteMapping("{id}")
-    public  Map<String, String> delete(@PathVariable String id) {
-        return messageService.delete(id);
+    public ResponseEntity delete(@PathVariable String id) {
+        return ResponseEntity.noContent().build();
     }
 }
