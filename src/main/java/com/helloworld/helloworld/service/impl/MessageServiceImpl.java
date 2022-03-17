@@ -29,7 +29,7 @@ public class MessageServiceImpl implements MessageService {
         return getMessage(id);
     }
 
-    @PostMapping
+    @PostMapping("{id}")
     public Map<String, String> create(@RequestBody Map<String, String> message) {
         message.put("id", String.valueOf(counter++));
         messages.add(message);
@@ -49,5 +49,4 @@ public class MessageServiceImpl implements MessageService {
         Map<String, String> message = getMessage(id);
         messages.remove(message);
     }
-
 }
