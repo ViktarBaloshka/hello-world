@@ -45,8 +45,11 @@ public class MessageServiceImpl implements MessageService {
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable String id) {
+    /*Почему когда было public void delete(@PathVariable String id) не сработало, хотя по идее
+    * удаление записи ничего не должно возвращать. Когжа написал как есть и вернул message, то сработало?  */
+    public Map<String, String> delete(@PathVariable String id) {
         Map<String, String> message = getMessage(id);
         messages.remove(message);
+        return message;
     }
 }

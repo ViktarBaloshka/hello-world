@@ -34,6 +34,7 @@ public class MessageController {
     }
 
     @DeleteMapping("{id}")
-    public void delete(@PathVariable String id) {
+    public  Map<String, String> delete(@PathVariable String id) {
+        return messageService.delete(id);
     }
 }
