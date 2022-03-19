@@ -12,4 +12,6 @@ public interface MessageService {
 
     Map<String, String> update(String id, Map<String, String> message);
 
+    void delete(String id);
+
 }
